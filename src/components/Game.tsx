@@ -10,11 +10,18 @@ function TicTacToeGame() {
         jumpTo,
         winner,
         handleClick,
+        gameState,
+        setGameState,
+        BoardValue
     } = GameLogic();
 
     // reset btn logic
     const Reset = (() => {
         console.log("reset")
+        setGameState({
+            history: [BoardValue()],
+            step: 0
+        })
     })
 
     return (

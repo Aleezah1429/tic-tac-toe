@@ -74,7 +74,9 @@ function GameLogic() {
         xIsNext,
         winner,
         handleClick,
-        jumpTo
+        jumpTo,
+        setGameState,
+        BoardValue
     };
 }
 
