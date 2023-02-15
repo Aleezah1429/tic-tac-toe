@@ -1,50 +1,56 @@
 import * as React from 'react';
 import "../Game.css";
 import GameLogic, { BoardState } from './GameLogic';
-
+import { Value } from './GameLogic';
 
 // interface => type describe 
-interface boardProps{
+interface boardProps {
     board: BoardState;
-    onClick: (square:number) => void
+    onClick: (square: number) => void
 }
 
-function Board({board, onClick}:boardProps) {
+// interface for 1 square box
+interface SquareProps {
+    value: Value;
+    onClickSquare: () => void;
+};
+
+
+// squre box function
+export function Square(props: SquareProps) {
+    return (
+        <div className='Column' onClick={props.onClickSquare}>
+            {props.value}
+        </div>
+    );
+}
+
+function Board({ board, onClick }: boardProps) {
+
+    // create board func
+    const createProps = (square: number): SquareProps => {
+        return {
+            value: board[square],
+            onClickSquare: () => onClick(square),
+        };
+    };
 
     return (
         <div className='Board'>
             <div className='Row'>
-                <div className='Column'>
-                    ffff
-                </div>
-                <div className='Column'>
-                    ffff
-                </div>
-                <div className='Column'>
-                    ffff
-                </div>
+                <Square {...createProps(0)} />
+                <Square {...createProps(1)} />
+                <Square {...createProps(2)} />
             </div>
             <div className='Row'>
-                <div className='Column'>
-                    ffff
-                </div>
-                <div className='Column'>
-                    ffff
-                </div>
-                <div className='Column'>
-                    ffff
-                </div>
+                <Square {...createProps(3)} />
+                <Square {...createProps(4)} />
+                <Square {...createProps(5)} />
             </div>
             <div className='Row'>
-                <div className='Column'>
-                    ffff
-                </div>
-                <div className='Column'>
-                    ffff
-                </div>
-                <div className='Column'>
-                    ffff
-                </div>
+                <Square {...createProps(6)} />
+                <Square {...createProps(7)} />
+                <Square {...createProps(8)} />
             </div>
         </div>
 

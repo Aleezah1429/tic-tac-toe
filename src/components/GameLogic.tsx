@@ -19,9 +19,9 @@ function CalculateWinner(BoardState: BoardState) {
         [2, 4, 6]
     ]
 
-    for (var i = 0; i <= winGame.length; i++) {
-        const [a, b, c] = winGame[i]
-        if (BoardState[a] && BoardState[b] === BoardState[a] && BoardState[b] && BoardState[c] === BoardState[a]) {
+    for (var i = 0; i < winGame.length; i++) {
+        const [a, b, c] = winGame[i];
+        if (BoardState[a] && BoardState[a] === BoardState[b] && BoardState[a] === BoardState[c]) {
             return BoardState[a];
         }
     }
