@@ -7,12 +7,13 @@ function TicTacToeGame() {
     const {
         current,
         xIsNext,
-        jumpTo,
+        // jumpTo,
         winner,
         handleClick,
         gameState,
         setGameState,
-        BoardValue
+        BoardValue,
+        ComputerTurn
     } = GameLogic();
 
     // reset btn logic
@@ -23,6 +24,13 @@ function TicTacToeGame() {
             step: 0
         })
     })
+
+    if (!xIsNext) {
+        ComputerTurn()
+    }
+
+
+    // {console.log("xIsNext", xIsNext)}
 
     return (
         <div className='Board'>
