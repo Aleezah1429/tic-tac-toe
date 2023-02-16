@@ -1,3 +1,8 @@
+# TIC-TAC-TOE Game on react JS and typescript with computer turn
+
+[Recording_1676564262047.webm](https://user-images.githubusercontent.com/64039135/219426004-4497eae8-d671-40fd-9649-6f646b860e02.webm)
+
+
 # Getting Started with Create React App
 npx create-react-app tic-tac-toe --template typescript
 
